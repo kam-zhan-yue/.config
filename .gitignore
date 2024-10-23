@@ -1,0 +1,27 @@
+# Ignore everything
+/*
+/*/
+
+# Except ...
+!.gitignore
+!bootstrap/
+!kitty/
+!skhd/
+!yabai/
+!zsh/
+!sketchybar/
+!bash/
+!nvim/
+!starship/
+!scripts/
+!zed/
+
+# Reignore
+zed/.*
+zed/embeddings/*
+zed/prompts/*
+zsh/.zsh_history*
+zsh/.zsh_sessions*
+zsh/.zcompdump*
+zsh/.p10k.zsh
+nvim/undodir*
