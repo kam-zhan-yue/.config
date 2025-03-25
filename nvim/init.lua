@@ -25,17 +25,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-
 require("lazy").setup("plugins")
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>')
 
 
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed={"lua", "javascript"},
-  highlight={enable=true},
-  indent={enable=true},
-})
