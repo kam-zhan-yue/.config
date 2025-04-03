@@ -10,10 +10,10 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "show_inline_completions": false,
+  "show_edit_predictions": false,
   "languages": {
     "Rust": {
-      "show_inline_completions": false
+      "show_edit_predictions": false
     }
   },
   "assistant": {
