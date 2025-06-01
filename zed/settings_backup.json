@@ -16,8 +16,8 @@
       "show_edit_predictions": false
     }
   },
-  "agent": {
-    "default_profile": "write",
+  "assistant": {
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4o"
@@ -35,5 +35,5 @@
     "light": "One Light",
     "dark": "One Dark"
   },
-  "format_on_save": "on"
+  "format_on_save": "off"
 }
