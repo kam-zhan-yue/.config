@@ -7,13 +7,6 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "language_models": {
-    "copilot_chat": {
-      "api_url": "https://api.githubcopilot.com/chat/completions",
-      "auth_url": "https://api.github.com/copilot_internal/v2/token",
-      "models_url": "https://api.githubcopilot.com/models"
-    }
-  },
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -36,13 +29,6 @@
         "source.organizeImports.biome": true
       }
     },
-    "JSX": {
-      "formatter": { "language_server": { "name": "biome" } },
-      "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true
-      }
-    },
     "TSX": {
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
@@ -55,9 +41,8 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
-    },
-    "version": "2"
+      "model": "gpt-4.1"
+    }
   },
   "telemetry": {
     "metrics": true
@@ -70,5 +55,6 @@
     "light": "One Light",
     "dark": "One Dark"
   },
-  "format_on_save": "on"
+  "format_on_save": "off",
+  "disable_ai": true
 }
