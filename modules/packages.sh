@@ -117,34 +117,34 @@ install_package rider --yay=rider
 install_package godot
 
 if [[ ${os} == "macos" ]] ; then
- # MacOS specific packages
- printf "\n=> Installing MacOS Packages\n"
- install_package rectangle
- install_package raycast
- install_package imageoptim
- install_package spotify
- install_package licecap
- install_package slack
- install_package postman
+  # MacOS specific packages
+  printf "\n=> Installing MacOS Packages\n"
+  install_package rectangle
+  install_package raycast
+  install_package imageoptim
+  install_package spotify
+  install_package licecap
+  install_package slack
+  install_package postman
 
- # Fonts
- install_package font-hack-nerd-font
- install_package font-jetbrains-mono-nerd-font
+  # Fonts
+  install_package font-hack-nerd-font
+  install_package font-jetbrains-mono-nerd-font
 
- # Yabai
- install_package jq
- if ! brew list -1 | grep -q yabai; then
-  brew install koekeishiya/formulae/yabai
-  echo "✅ yabai installed"
- else
-  echo "✅ yabai is already installed"
- fi
- if ! brew list -1 | grep -q skhd; then
-  brew install koekeishiya/formulae/skhd
-  echo "✅ skhd installed"
- else
-  echo "✅ skhd is already installed"
- fi
+  # Yabai
+  install_package jq
+  if ! brew list -1 | grep -q yabai; then
+    brew install koekeishiya/formulae/yabai
+      echo "✅ yabai installed"
+    else
+      echo "✅ yabai is already installed"
+  fi
+  if ! brew list -1 | grep -q skhd; then
+    brew install koekeishiya/formulae/skhd
+    echo "✅ skhd installed"
+  else
+    echo "✅ skhd is already installed"
+  fi
 
  # Sketchybar
  if ! brew list -1 | grep -q sketchybar; then
@@ -162,43 +162,44 @@ if [[ ${os} == "macos" ]] ; then
 else
     echo "✅ sketchybar already installed, skipping setup"
 fi
- install_package borders
+  install_package borders
 
 elif [[ ${os} == "arch" ]] ; then
- printf "\n=> Installing Arch Linux Packages\n"
- install_package hyprland
+  printf "\n=> Installing Arch Linux Packages\n"
+  install_package hyprland
 
- install_package nvidia-dkms
- install_package nvidia-utils
- install_package egl-wayland
- # hyprland required packages
- install_package dunst
- install_package pipewire
- install_package wireplumber
- install_package qt5-wayland
- install_package qt6-wayland
- install_package hyprpolkitagent
- install_package xdg-desktop-portal-hyprland
- install_package polkit-kde-agent
+  install_package nvidia-dkms
+  install_package nvidia-utils
+  install_package egl-wayland
+  # hyprland required packages
+  install_package dunst
+  install_package pipewire
+  install_package wireplumber
+  install_package qt5-wayland
+  install_package qt6-wayland
+  install_package hyprpolkitagent
+  install_package xdg-desktop-portal-hyprland
+  install_package polkit-kde-agent
 
- # fonts
- install_package ttf-jetbrains-mono
- install_package ttf-jetbrains-mono-nerd
- install_package ttf-nerd-font-symbols
- install_package ttf-nerd-font-symbols-mono
+  # fonts
+  install_package ttf-jetbrains-mono
+  install_package ttf-jetbrains-mono-nerd
+  install_package ttf-nerd-fonts-symbols
+  install_package ttf-nerd-fonts-symbols-mono
+  install_package noto-fonts-cjk
 
- # display manager
- install_package sddm
+  # hyprland customisation
+  install_package waybar
+  install_package grim
+  install_package slurp
+  install_package hyprpaper
+  install_package hyprlauncher
+  install_package brightnessctl
 
- # hyprland customisation
- install_package waybar
- install_package grim
- install_package slurp
+  # login management
+  install_package ly
+  sudo systemctl enable ly.service
 
- # login management
- install_package ly
- sudo systemctl enable ly.service
-
- # recording gifs
- install_package peek
+  # recording gifs
+  install_package peek
 fi

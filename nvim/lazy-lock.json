@@ -10,7 +10,7 @@
   "copilot-cmp": { "branch": "master", "commit": "15fc12af3d0109fa76b60b5cffa1373697e261d1" },
   "copilot.lua": { "branch": "master", "commit": "d296017e588215df3f7b5796d1172f0d690fa13c" },
   "fidget.nvim": { "branch": "main", "commit": "d9ba6b7bfe29b3119a610892af67602641da778e" },
-  "git-blame.nvim": { "branch": "master", "commit": "9874ec1ec8bc53beb33b7cd82c092b85271a578b" },
+  "git-blame.nvim": { "branch": "main", "commit": "9874ec1ec8bc53beb33b7cd82c092b85271a578b" },
   "harpoon": { "branch": "harpoon2", "commit": "87b1a3506211538f460786c23f98ec63ad9af4e5" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lsp-zero.nvim": { "branch": "v4.x", "commit": "baff1ca10ecad7efe04f02f06d2647dd2ae90074" },

@@ -10,4 +10,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
   source modules/macos.sh
 elif [[ "$(uname)" == "Linux" && "$(uname -m)" == "x86_64" ]]; then
   source modules/linux.sh
-fi
+ else
+   os="unknown"
+ fi
