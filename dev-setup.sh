@@ -131,8 +131,9 @@ install_package bacon
 install_package bat
 install_package git-delta
 install_package hyperfine
+install_package imageoptim # needs AUR
 install_package jj
-install_package nvim
+install_package neovim
 install_package presenterm
 install_package ripgrep
 install_package starship

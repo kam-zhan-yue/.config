@@ -23,36 +23,26 @@ This will do the following:
 
 Below are all the packages I use in my dev environment, along with my personal rating.
 
-★ ★ ★ ★ ★ = Core part of workflow, can't live without it.
-★ ★ ★ ★ ☆ = Used daily, makes certain workflows so much better
-★ ★ ★ ☆ ☆ = Solid usage, just barely better than the default option
-★ ★ ☆ ☆ ☆ = Little usage, good for specific scenarios
-★ ☆ ☆ ☆ ☆ = Rarely used, only for style / effects
+★★★★★ = Core part of workflow, can't live without it.
 
-| Package | Rating | Description                                                               |
-| ------- | ------ | ------------------------------------------------------------------------- |
-| bacon   | ★★★☆☆  | Whatever your Rust LSP is telling you, the compiler errors say it better. |
+★★★★☆ = Used daily, makes certain workflows so much better
 
-#### bat
+★★★☆☆ = Solid usage, just barely better than the default option
 
-Cat, but cooler. I barely use this anyways, it just seems fancier.
+★★☆☆☆ = Little usage, good for specific scenarios
 
-#### git-delta
+★☆☆☆☆ = Rarely used, only for style / effects
 
-I'm not against the standard diff formatter, but it's nice to spice things up once in a while.
-
-#### hyperfine
-
-#### jj
-
-#### nvim
-
-#### presenterm
-
-#### ripgrep
-
-#### starship
-
-#### zoxide
-
-#### zsh
+| Package                                                | Rating | Description                                                               |
+| ------------------------------------------------------ | ------ | ------------------------------------------------------------------------- |
+| [bat](https://github.com/sharkdp/bat)                  | ★☆☆☆☆  | Visually stunning, but I barely use this function.                        |
+| [bacon](https://github.com/Canop/bacon)                | ★★★☆☆  | Whatever your Rust LSP is telling you, the compiler errors say it better. |
+| [delta](https://github.com/dandavison/delta)           | ★☆☆☆☆  | Prettier diff formats, but I was never too against the default one.       |
+| [hyperfine](https://github.com/sharkdp/hyperfine)      | ★★★★☆  | Amazing benchmarking tool. Shouldn't be using anything else.              |
+| [imageoptim](https://github.com/ImageOptim/ImageOptim) | ★★☆☆☆  | Super niche one-purpose use, but it is good at it.                        |
+| [jj](https://github.com/jj-vcs/jj)                     | ★★★★★  | Completely replaced git for me. The best way to version control IMO.      |
+| [neovim](https://github.com/neovim/neovim)             | ★★★★★  | Don't think I have to explain this one.                                   |
+| [ripgrep](https://github.com/BurntSushi/ripgrep)       | ★★☆☆☆  | Niche usage for me, but definitely better than using grep.                |
+| [starship](https://github.com/starship/starship)       | ★★★★★  | Technically this is only visual, but I can't use zsh without it.          |
+| [zoxide](https://github.com/ajeetdsouza/zoxide)        | ★★★★★  | Sceptical at first, but I don't use cd anymore because of this.           |
+| [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)          | ★★★★★  | Handles everything I could ever want for zsh.                             |
