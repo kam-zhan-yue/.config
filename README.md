@@ -23,16 +23,6 @@ This will do the following:
 
 Below are all the packages I use in my dev environment, along with my personal rating.
 
-★★★★★ = Core part of workflow, can't live without it.
-
-★★★★☆ = Used daily, makes certain workflows so much better
-
-★★★☆☆ = Solid usage, just barely better than the default option
-
-★★☆☆☆ = Little usage, good for specific scenarios
-
-★☆☆☆☆ = Rarely used, only for style / effects
-
 | Package                                                | Rating | Description                                                               |
 | ------------------------------------------------------ | ------ | ------------------------------------------------------------------------- |
 | [bat](https://github.com/sharkdp/bat)                  | ★☆☆☆☆  | Visually stunning, but I barely use this function.                        |
@@ -46,3 +36,11 @@ Below are all the packages I use in my dev environment, along with my personal r
 | [starship](https://github.com/starship/starship)       | ★★★★★  | Technically this is only visual, but I can't use zsh without it.          |
 | [zoxide](https://github.com/ajeetdsouza/zoxide)        | ★★★★★  | Sceptical at first, but I don't use cd anymore because of this.           |
 | [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)          | ★★★★★  | Handles everything I could ever want for zsh.                             |
+
+### Rating System
+
+> ★★★★★ = Core part of workflow, can't live without it.
+> ★★★★☆ = Used daily, makes certain workflows so much better
+> ★★★☆☆ = Solid usage, just barely better than the default option
+> ★★☆☆☆ = Little usage, good for specific scenarios
+> ★☆☆☆☆ = Rarely used, only for style / effects
