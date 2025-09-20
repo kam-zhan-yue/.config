@@ -77,7 +77,7 @@ Below are all the applications I use, either proprietary or open-source.
 | Rating | Meaning                                                      |
 | ------ | ------------------------------------------------------------ |
 | ★★★★★  | **Core part of workflow** — can't live without it            |
-| ★★★★☆  | **Used daily** — makes certain workflows much better         |
-| ★★★☆☆  | **Solid usage** — just barely better than the default option |
-| ★★☆☆☆  | **Little usage** — good only for specific scenarios          |
-| ★☆☆☆☆  | **Rarely used** — mainly for style/effects                   |
+| ★★★★   | **Used daily** — makes certain workflows much better         |
+| ★★★    | **Solid usage** — just barely better than the default option |
+| ★★     | **Little usage** — good only for specific scenarios          |
+| ★      | **Rarely used** — mainly for style/effects                   |
