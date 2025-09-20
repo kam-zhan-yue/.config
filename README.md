@@ -29,9 +29,9 @@ Below are all the packages I use in my dev environment, along with my personal r
 ★ ★ ☆ ☆ ☆ = Little usage, good for specific scenarios
 ★ ☆ ☆ ☆ ☆ = Rarely used, only for style / effects
 
-| Package | Rating    | Description                                                               |
-| ------- | --------- | ------------------------------------------------------------------------- |
-| bacon   | ★ ★ ★ ☆ ☆ | Whatever your Rust LSP is telling you, the compiler errors say it better. |
+| Package | Rating | Description                                                               |
+| ------- | ------ | ------------------------------------------------------------------------- |
+| bacon   | ★★★☆☆  | Whatever your Rust LSP is telling you, the compiler errors say it better. |
 
 #### bat
 
