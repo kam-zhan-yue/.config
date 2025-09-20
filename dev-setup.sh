@@ -159,11 +159,24 @@ install_package rider
 install_package postman
 install_package godot
 
-if [[ os == "macos" ]] ; then
+if [[ ${os} == "macos" ]] ; then
  # MacOS specific packages
  install_package rectangle
  install_package raycast
- chsh -s $(which zsh)
-elif [[ os == "arch" ]] ; then
+
+ 
+ # desired shell
+ which_zsh="$(which zsh)"
+
+ # check current login shell
+ current_shell="$(dscl . -read ~/ UserShell | awk '{print $2}')"   # macOS
+
+ # if [[ "$current_shell" == "$which_zsh" ]]; then
+ #   echo "✅ zsh is already the default shell"
+ # else
+ #   echo "➡ Changing default shell to $which_zsh"
+ #   chsh -s "$which_zsh"
+ # fi
+elif [[ ${os} == "arch" ]] ; then
  echo "Add some arch package here"
 fi
