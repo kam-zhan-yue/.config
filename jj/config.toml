@@ -1,0 +1,10 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Alex Kam"
+email = "kamzhanyue@gmail.com"
+
+[ui]
+editor = "nvim"
+diff.formatter = "delta"
+

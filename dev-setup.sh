@@ -1,29 +1,90 @@
 #!/bin/bash
 
-printf "Setting up the dev environment\n"
-printf "This script will delete existing config folders and create symlinks to the ones in this repo!\n"
+printf "\nSetting up the dev environment\n"
+# echo "This script will delete existing config folders and create symlinks to the ones in this repo!\n"
+#
+# read -r -p "Are you sure you want to contine? [y/N] " response
+# if [[ ! "$response" =~ ^(yes|y)$ ]]; then exit 0; fi
 
-read -r -p "Are you sure you want to contine? [y/N] " response
-if [[ ! "$response" =~ ^(yes|y)$ ]]; then exit 0; fi
+os=""
+if [[ "$(uname)" == "Darwin" ]]; then
+  os="macos"
+  printf "\nDetected MacOS\n"
+elif [[ "$(uname)" == "Linux" && "$(uname -m)" == "x86_64" ]]; then
+  os="arch"
+  printf "\nDetected Arch Linux\n"
+else
+  os="unknown"
+fi
+
+# commonly used packages
+# ------------------------------------------------------------
+printf "\n=> Installing commonly used packages\n"
+
+# cargo
+if ! command -v cargo &> /dev/null
+then
+    printf "\n=> Installing cargo"
+    curl https://sh.rustup.rs -sSf | sh
+    echo "✅ cargo installed"
+else
+    echo "✅ cargo is already installed"
+fi
+
+
+# uv
+if ! command -v uv &> /dev/null
+then
+    printf "\n=> Installing uv"
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    echo "✅ uv installed"
+else
+    echo "✅ uv is already installed"
+fi
+
+# mise
+if ! command -v mise &> /dev/null
+then
+    printf "\n=> Installing mise"
+    curl https://mise.run | sh
+    echo "✅ mise installed"
+else
+    echo "✅ mise is already installed"
+fi
+
+# homebrew
+if [[ "${os}" == "macos" ]] ; then
+ if ! command -v brew &> /dev/null
+ then
+     printf "\n=>Installing homebrew"
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     echo "✅ homebrew installed"
+ else
+     echo "✅ homebrew is already installed"
+ fi
+fi
+
+# oh-my-zsh
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  echo "✅ oh-my-zsh installed"
+else
+  echo "✅ oh-my-zsh is already installed"
+fi
+
+# symlinks
+# ------------------------------------------------------------
+printf "\n=> Setting up symlinks\n"
 
 function setup_symlink() {
  local target="${1}"
  local source="${2}"
 
- printf "\n => Setting up %s\n" "${target}"
-
  if [[ -e "${target}" ]] ; then
-  read -r -p "=>An existing ${target} exists. Overwrite with symlink? [y/n] " response
-  if [[ "${response}" =~ ^(yes|y)$ ]] ; then
-   rm -rf "${target}"
-   ln -sv "${source}" "${target}"
-   echo "=> ${target} now points to ${source}"
-  else
-   echo "=> Not creating a symlink for ${target}"
-  fi
+  rm -rf "${target}"
+  ln -sv "${source}" "${target}"
  else
   ln -sv "${source}" "${target}"
-   echo "=> ${target} now points to ${source}"
  fi
 }
 
@@ -32,3 +93,42 @@ setup_symlink "${HOME}/.zshrc" "${HOME}/.config/zsh/.zshrc"
 
 # gitconfig
 setup_symlink "${HOME}/.gitconfig" "${HOME}/.config/git/.gitconfig"
+
+# os specific packages
+# ------------------------------------------------------------
+printf "\n=> Setting up os-specific packages\n"
+
+function install_package() {
+ local package="${1}"
+ if [[ ${os} == "macos" ]] ; then
+  if ! brew list -1 | grep -q "^${package}\$"; then
+   brew install "${package}"
+   echo "✅ ${package} installed"
+  else
+   echo "✅ ${package} is already installed"
+  fi
+ elif [[ ${os} == "arch" ]] ; then
+  if ! pacman -Qi "${package}" &> /dev/null; then
+   sudo pacman -S --noconfirm "${package}"
+   echo "✅ ${package} installed"
+  else
+   echo "✅ ${package} is already installed"
+  fi
+ fi
+}
+
+install_package zsh
+
+if [[ os == "macos" ]] ; then
+ chsh -s $(which zsh)
+fi
+
+install_package bacon
+install_package bat
+install_package git-delta
+install_package hyperfine
+install_package jj
+install_package starship
+install_package zoxide
+
+

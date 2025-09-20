@@ -16,6 +16,8 @@
 !scripts/
 !zed/
 !git/
+!jj/
+
 !.gitignore
 
 !README.md
