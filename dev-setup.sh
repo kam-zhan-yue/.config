@@ -127,8 +127,11 @@ function install_package() {
  fi
 }
 
+install_package astroterm
 install_package bacon
 install_package bat
+install_package docker
+install_package ghostty
 install_package git-delta
 install_package hyperfine
 install_package imageoptim # needs AUR
@@ -136,10 +139,31 @@ install_package jj
 install_package neovim
 install_package presenterm
 install_package ripgrep
+install_package redis
 install_package starship
+install_package zed
 install_package zoxide
 install_package zsh
 
+printf "\n=> Setting up personal applications\n"
+install_package anki
+install_package audacity
+install_package inky
+install_package obsidian
+install_package spotify
+install_package slack
+install_package obs
+install_package licecap
+install_package jetbrains-toolbox
+install_package rider
+install_package postman
+install_package godot
+
 if [[ os == "macos" ]] ; then
+ # MacOS specific packages
+ install_package rectangle
+ install_package raycast
  chsh -s $(which zsh)
+elif [[ os == "arch" ]] ; then
+ echo "Add some arch package here"
 fi
