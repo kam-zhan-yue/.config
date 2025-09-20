@@ -13,10 +13,13 @@
 !sketchybar/
 !bash/
 !nvim/
-!starship/
 !scripts/
 !zed/
 !git/
+
+!README.md
+!*.sh
+!*.toml
 
 # Reignore
 zed/.*
