@@ -39,8 +39,10 @@ Below are all the packages I use in my dev environment, along with my personal r
 
 ### Rating System
 
-> ★★★★★ = Core part of workflow, can't live without it.
-> ★★★★☆ = Used daily, makes certain workflows so much better
-> ★★★☆☆ = Solid usage, just barely better than the default option
-> ★★☆☆☆ = Little usage, good for specific scenarios
-> ★☆☆☆☆ = Rarely used, only for style / effects
+| Rating | Meaning                                                      |
+| ------ | ------------------------------------------------------------ |
+| ★★★★★  | **Core part of workflow** — can't live without it            |
+| ★★★★☆  | **Used daily** — makes certain workflows much better         |
+| ★★★☆☆  | **Solid usage** — just barely better than the default option |
+| ★★☆☆☆  | **Little usage** — good only for specific scenarios          |
+| ★☆☆☆☆  | **Rarely used** — mainly for style/effects                   |
