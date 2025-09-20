@@ -39,8 +39,6 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-. "$HOME/.local/share/mise/installs/node/18.20.4/lib/node_modules/@getgrit/cli/node_modules/bin/env"
-
 # Config Stuff
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(starship init zsh)"

@@ -6,5 +6,6 @@ email = "kamzhanyue@gmail.com"
 
 [ui]
 editor = "nvim"
-diff.formatter = "delta"
+pager = "delta"
+diff-formatter = ":git"
 

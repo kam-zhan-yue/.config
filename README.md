@@ -21,12 +21,38 @@ This will do the following:
 
 ### Used Packages
 
-#### zsh, oh-my-zsh
+Below are all the packages I use in my dev environment, along with my personal rating.
 
-#### zoxide
+★ ★ ★ ★ ★ = Core part of workflow, can't live without it.
+★ ★ ★ ★ ☆ = Used daily, makes certain workflows so much better
+★ ★ ★ ☆ ☆ = Solid usage, just barely better than the default option
+★ ★ ☆ ☆ ☆ = Little usage, good for specific scenarios
+★ ☆ ☆ ☆ ☆ = Rarely used, only for style / effects
+
+| Package | Rating    | Description                                                               |
+| ------- | --------- | ------------------------------------------------------------------------- |
+| bacon   | ★ ★ ★ ☆ ☆ | Whatever your Rust LSP is telling you, the compiler errors say it better. |
 
 #### bat
 
-#### bacon
+Cat, but cooler. I barely use this anyways, it just seems fancier.
+
+#### git-delta
+
+I'm not against the standard diff formatter, but it's nice to spice things up once in a while.
+
+#### hyperfine
+
+#### jj
+
+#### nvim
+
+#### presenterm
+
+#### ripgrep
 
 #### starship
+
+#### zoxide
+
+#### zsh

@@ -52,6 +52,16 @@ else
     echo "✅ mise is already installed"
 fi
 
+# grit
+if ! command -v grit &> /dev/null
+then
+    printf "\n=> Installing grit"
+    curl -fsSL https://docs.grit.io/install | bash
+    echo "✅ grit installed"
+else
+    echo "✅ grit is already installed"
+fi
+
 # homebrew
 if [[ "${os}" == "macos" ]] ; then
  if ! command -v brew &> /dev/null
@@ -117,18 +127,18 @@ function install_package() {
  fi
 }
 
-install_package zsh
-
-if [[ os == "macos" ]] ; then
- chsh -s $(which zsh)
-fi
-
 install_package bacon
 install_package bat
 install_package git-delta
 install_package hyperfine
 install_package jj
+install_package nvim
+install_package presenterm
+install_package ripgrep
 install_package starship
 install_package zoxide
+install_package zsh
 
-
+if [[ os == "macos" ]] ; then
+ chsh -s $(which zsh)
+fi
