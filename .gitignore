@@ -16,6 +16,7 @@
 !scripts/
 !zed/
 !git/
+!.gitignore
 
 !README.md
 !*.sh
