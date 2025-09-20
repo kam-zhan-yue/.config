@@ -10,10 +10,10 @@ function setup_symlink() {
  local target="${1}"
  local source="${2}"
 
- printf "\n => Setting up %s\n" "${name}"
+ printf "\n => Setting up %s\n" "${target}"
 
  if [[ -e "${target}" ]] ; then
-  read -r -p "=>An existing ${name} exists. Overwrite with symlink? [y/n] " response
+  read -r -p "=>An existing ${target} exists. Overwrite with symlink? [y/n] " response
   if [[ "${response}" =~ ^(yes|y)$ ]] ; then
    rm -rf "${target}"
    ln -sv "${source}" "${target}"
