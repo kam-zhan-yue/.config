@@ -5,6 +5,7 @@
 # Except ...
 !.gitignore
 !.gitconfig
+!gh/
 !bootstrap/
 !kitty/
 !skhd/
