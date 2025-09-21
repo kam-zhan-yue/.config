@@ -110,6 +110,8 @@ printf "\n=> Setting up developer packages\n"
 
 function install_package() {
  local package="${1}"
+ local option="${2}"
+
  if [[ ${os} == "macos" ]] ; then
   if ! brew list -1 | grep -q "^${package}\$"; then
    brew install "${package}"
@@ -118,12 +120,37 @@ function install_package() {
    echo "✅ ${package} is already installed"
   fi
  elif [[ ${os} == "arch" ]] ; then
-  if ! pacman -Qi "${package}" &> /dev/null; then
-   sudo pacman -S --noconfirm "${package}"
-   echo "✅ ${package} installed"
-  else
-   echo "✅ ${package} is already installed"
-  fi
+  case "${option}" in
+   # if we defined pacman, then use the variable
+   --pacman=*)
+    package="${option#*=}"
+    if ! pacman -Qi "${package}" &> /dev/null; then
+     sudo pacman -S --noconfirm "${package}"
+     echo "✅ ${package} installed"
+    else
+     echo "✅ ${package} is already installed"
+    fi
+    ;;
+   --yay=*)
+    package="${option#*=}"
+    if ! yay -Qi "${package}" &> /dev/null; then
+     yay -S --noconfirm "${package}"
+     echo "✅ ${package} installed with yay"
+    else
+     echo "✅ ${package} is already installed"
+    fi
+    ;;
+   *)
+    if ! pacman -Qi "${package}" &> /dev/null; then
+     sudo pacman -S --noconfirm "${package}"
+     echo "✅ ${package} installed"
+    else
+     echo "✅ ${package} is already installed"
+    fi
+    ;;
+   esac
+
+
  fi
 }
 
@@ -133,13 +160,12 @@ install_package bat
 install_package cmake
 install_package docker
 install_package fzf
-install_package gh
+install_package gh --yay=github-cli
 install_package ghostty
 install_package git-delta
 install_package git-lfs
 install_package hyperfine
-install_package imageoptim # needs AUR
-install_package jj
+install_package jj --pacman=jujutsu
 install_package neovim
 install_package presenterm
 install_package ripgrep
@@ -162,26 +188,27 @@ else
 fi
 
 printf "\n=> Setting up personal applications\n"
-install_package anki
+install_package anki --yay=anki
 install_package audacity
-install_package inky
+install_package inky --yay=inky
 install_package obsidian
-install_package spotify
-install_package slack
-install_package obs
-install_package licecap
-install_package jetbrains-toolbox
-install_package rider
-install_package postman
+install_package obs --pacman=obs-studio
+install_package jetbrains-toolbox --yay=jetbrains-toolbox
+install_package rider --yay=rider
 install_package godot
 
 if [[ ${os} == "macos" ]] ; then
  # MacOS specific packages
+ echo "\n=> Installing MacOS Packages\n"
  install_package rectangle
  install_package raycast
-
+ install_package imageoptim
+ install_package spotify
+ install_package licecap
+ install_package slack
+ install_package postman
 elif [[ ${os} == "arch" ]] ; then
- echo "Add some arch package here"
+ echo "\n=> Installing Arch Linux Packages\n"
  install_package hyprland
 
  install_package nvidia-dkms
@@ -215,6 +242,6 @@ elif [[ ${os} == "arch" ]] ; then
  install_package ly
  sudo systemctl enable ly.service
 
- # keymappings
- setxbmap -option caps:escape
+ # recording gifs
+ install_package peek
 fi
