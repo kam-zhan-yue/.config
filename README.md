@@ -32,9 +32,11 @@ Below are all the packages I use in my dev environment, along with my personal r
 | [neovim](https://github.com/neovim/neovim)             | ★★★★★  | I do prefer Zed generally, but I use nvim to fill in the gaps.            |
 | [zoxide](https://github.com/ajeetdsouza/zoxide)        | ★★★★★  | Sceptical at first, but I don't use cd anymore because of this.           |
 | [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)          | ★★★★★  | Handles everything I could ever want for zsh.                             |
+| [fzf](https://github.com/junegunn/fzf)                 | ★★★★   | Super versatile tool that makes anything interactive.                     |
 | [starship](https://github.com/starship/starship)       | ★★★★   | Technically this is only visual, but I can't use zsh without it.          |
 | [hyperfine](https://github.com/sharkdp/hyperfine)      | ★★★★   | Amazing benchmarking tool. Shouldn't be using anything else.              |
 | [bacon](https://github.com/Canop/bacon)                | ★★★    | Whatever your Rust LSP is telling you, the compiler errors say it better. |
+| [gh](https://cli.github.com/)                          | ★★★    | Convenient replacement for github.com, and powerful integrations.         |
 | [imageoptim](https://github.com/ImageOptim/ImageOptim) | ★★     | Super niche one-purpose use, but it is good at it.                        |
 | [ripgrep](https://github.com/BurntSushi/ripgrep)       | ★★     | Niche usage for me, but definitely better than using grep.                |
 | [astroterm](https://github.com/da-luce/astroterm)      | ★      | Pretty stars. Cool tool to look at, cool repo to read.                    |

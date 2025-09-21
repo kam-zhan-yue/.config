@@ -106,7 +106,7 @@ setup_symlink "${HOME}/.gitconfig" "${HOME}/.config/git/.gitconfig"
 
 # os specific packages
 # ------------------------------------------------------------
-printf "\n=> Setting up os-specific packages\n"
+printf "\n=> Setting up developer packages\n"
 
 function install_package() {
  local package="${1}"
@@ -131,6 +131,8 @@ install_package astroterm
 install_package bacon
 install_package bat
 install_package docker
+install_package fzf
+install_package gh
 install_package ghostty
 install_package git-delta
 install_package hyperfine
