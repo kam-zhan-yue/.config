@@ -130,11 +130,13 @@ function install_package() {
 install_package astroterm
 install_package bacon
 install_package bat
+install_package cmake
 install_package docker
 install_package fzf
 install_package gh
 install_package ghostty
 install_package git-delta
+install_package git-lfs
 install_package hyperfine
 install_package imageoptim # needs AUR
 install_package jj
@@ -146,6 +148,18 @@ install_package starship
 install_package zed
 install_package zoxide
 install_package zsh
+
+# desired shell
+# which_zsh="$(which zsh)"
+which_zsh="/usr/bin/zsh" # for some reason, archlinux has a symlink to /usr/sbin/zsh
+
+# check current login shell
+if [[ $SHELL == "$which_zsh" ]]; then
+  echo "✅ zsh is already the default shell"
+else
+  echo "➡ Changing default shell to $which_zsh"
+  chsh -s "$which_zsh"
+fi
 
 printf "\n=> Setting up personal applications\n"
 install_package anki
@@ -166,19 +180,41 @@ if [[ ${os} == "macos" ]] ; then
  install_package rectangle
  install_package raycast
 
- 
- # desired shell
- which_zsh="$(which zsh)"
-
- # check current login shell
- current_shell="$(dscl . -read ~/ UserShell | awk '{print $2}')"   # macOS
-
- # if [[ "$current_shell" == "$which_zsh" ]]; then
- #   echo "✅ zsh is already the default shell"
- # else
- #   echo "➡ Changing default shell to $which_zsh"
- #   chsh -s "$which_zsh"
- # fi
 elif [[ ${os} == "arch" ]] ; then
  echo "Add some arch package here"
+ install_package hyprland
+
+ install_package nvidia-dkms
+ install_package nvidia-utils
+ install_package egl-wayland
+ # hyprland required packages
+ install_package dunst
+ install_package pipewire
+ install_package wireplumber
+ install_package qt5-wayland
+ install_package qt6-wayland
+ install_package hyprpolkitagent
+ install_package xdg-desktop-portal-hyprland
+ install_package polkit-kde-agent
+
+ # fonts
+ install_package ttf-jetbrains-mono
+ install_package ttf-jetbrains-mono-nerd
+ install_package ttf-nerd-font-symbols
+ install_package ttf-nerd-font-symbols-mono
+
+ # display manager
+ install_package sddm
+
+ # hyprland customisation
+ install_package waybar
+ install_package grim
+ install_package slurp
+ 
+ # login management
+ install_package ly
+ sudo systemctl enable ly.service
+
+ # keymappings
+ setxbmap -option caps:escape
 fi
