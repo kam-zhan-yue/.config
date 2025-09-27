@@ -55,6 +55,6 @@
     "light": "One Light",
     "dark": "One Dark"
   },
-  "format_on_save": "off",
+  "format_on_save": "on",
   "disable_ai": true
 }
