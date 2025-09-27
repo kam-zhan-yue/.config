@@ -1,0 +1,47 @@
+# Changing Window Focus
+
+# Optimised for Vertical Moniotor Setup
+alt-k: yabai -m display --focus north
+alt-j: yabai -m display --focus south
+alt-l: yabai -m window --focus east
+alt-h: yabai -m window --focus west
+
+alt-i: yabai -m window --focus north
+alt-u: yabai -m window --focus south
+
+
+# Maximise a Window
+ctrl+alt-return: yabai -m window --toggle zoom-fullscreen
+
+# Moving Windows Around
+ctrl+alt-k: yabai -m window --display north; yabai -m display --focus north
+ctrl+alt-j: yabai -m window --display south; yabai -m display --focus south
+ctrl+alt-l: yabai -m window --swap east
+ctrl+alt-h: yabai -m window --swap west
+
+ctrl+alt-i: yabai -m window --swap north
+ctrl+alt-u: yabai -m window --swap south
+
+# Moving Windows to Different Spaces
+ctrl+alt-p: yabai -m window --space prev
+ctrl+alt-n: yabai -m window --space next
+
+alt-1 : yabai -m space --focus 1
+alt-2 : yabai -m space --focus 2
+alt-3 : yabai -m space --focus 3
+alt-4 : yabai -m space --focus 4
+alt-5 : yabai -m space --focus 5
+alt-6 : yabai -m space --focus 6
+alt-7 : yabai -m space --focus 7
+alt-8 : yabai -m space --focus 8
+alt-9 : yabai -m space --focus 9
+
+alt+shift-1: yabai -m window --space 1; yabai -m space --focus 1
+alt+shift-2: yabai -m window --space 2; yabai -m space --focus 2
+alt+shift-3: yabai -m window --space 3; yabai -m space --focus 3
+alt+shift-4: yabai -m window --space 4; yabai -m space --focus 4
+alt+shift-5: yabai -m window --space 5; yabai -m space --focus 5
+alt+shift-6: yabai -m window --space 6; yabai -m space --focus 6
+alt+shift-7: yabai -m window --space 7; yabai -m space --focus 7
+alt+shift-8: yabai -m window --space 8; yabai -m space --focus 8
+alt+shift-4: yabai -m window --space 4; yabai -m space --focus 4

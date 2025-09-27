@@ -83,3 +83,11 @@ Below are all the applications I use, either proprietary or open-source.
 | ★★★    | **Solid usage** — just barely better than the default option |
 | ★★     | **Little usage** — good only for specific scenarios          |
 | ★      | **Rarely used** — mainly for style/effects                   |
+
+### Post Installation
+
+After running `./dev-setup.sh` you need to do the following
+
+- `chsh -s "$which_zsh"` to configure zsh to be your default shell
+- (Setup Yabai and disable System Integrity Protection)[https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection]
+- (Setup Yabai's Scripting Add-On)[https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition]

@@ -1,0 +1,65 @@
+#!/bin/bash
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# Global Settings
+yabai -m config mouse_follows_focus             off
+yabai -m config focus_follows_mouse             off
+yabai -m config window_placement                second_child
+
+# Space Settings
+yabai -m config layout                          bsp
+yabai -m config top_padding                     0
+yabai -m config bottom_padding                  0
+yabai -m config left_padding                    0
+yabai -m config right_padding                   0
+yabai -m config window_gap                      0
+
+# Disable Specific Apps
+yabai -m rule --add app="^System Settings$" manage=off
+
+# Ghostty tabs render as separate windows in MacOS tiling window managers
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
+
+# Kill extra spaces (anything beyond 6)
+for sid in $(yabai -m query --spaces | jq '.[].index' | awk '$1 > 6'); do
+  yabai -m space --destroy $sid
+done
+
+# Ensure we have 6 spaces total
+current_spaces=$(yabai -m query --spaces | jq 'length')
+while [ "$current_spaces" -lt 6 ]; do
+  yabai -m space --create
+  current_spaces=$((current_spaces + 1))
+done
+
+# Configure Spaces
+yabai -m space 1 --label="dev" --display 1
+yabai -m space 2 --label="editors" --display 1
+yabai -m space 3 --label="web" --display 2
+yabai -m space 4 --label="comms" --display 2
+yabai -m space 5 --label="personal" --display 2
+yabai -m space 6 --label="other" --display 2
+
+# move some apps automatically to specific spaces
+yabai -m rule --add app="^Ghostty$" space=1
+yabai -m rule --add app="^Godot$" space=2
+yabai -m rule --add app="^Unity$" space=2
+
+yabai -m rule --add app="^Zed$" space=2
+yabai -m rule --add app="^Rider$" space=2
+
+yabai -m rule --add app="^Arc$" space=3
+yabai -m rule --add app="^Obsidian$" space=3
+
+yabai -m rule --add app="^Slack$" space=4
+yabai -m rule --add app="^Discord$" space=4
+yabai -m rule --add app="^Whatsapp$" space=4
+
+
+yabai -m rule --add app="^Spotify$" space=5
+
+yabai -m rule --add app="^Docker Desktop$" space=6

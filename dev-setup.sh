@@ -180,12 +180,12 @@ install_package zsh
 which_zsh="/usr/bin/zsh" # for some reason, archlinux has a symlink to /usr/sbin/zsh
 
 # check current login shell
-if [[ $SHELL == "$which_zsh" ]]; then
-  echo "✅ zsh is already the default shell"
-else
-  echo "➡ Changing default shell to $which_zsh"
-  chsh -s "$which_zsh"
-fi
+# if [[ $SHELL == "$which_zsh" ]]; then
+#   echo "✅ zsh is already the default shell"
+# else
+#   echo "➡ Changing default shell to $which_zsh"
+#   chsh -s "$which_zsh"
+# fi
 
 printf "\n=> Setting up personal applications\n"
 install_package anki --yay=anki
@@ -199,7 +199,7 @@ install_package godot
 
 if [[ ${os} == "macos" ]] ; then
  # MacOS specific packages
- echo "\n=> Installing MacOS Packages\n"
+ printf "\n=> Installing MacOS Packages\n"
  install_package rectangle
  install_package raycast
  install_package imageoptim
@@ -207,8 +207,13 @@ if [[ ${os} == "macos" ]] ; then
  install_package licecap
  install_package slack
  install_package postman
+
+ # Yabai Configuration
+ install_package koekeishiya/formulae/yabai
+ install_package koekeishiya/formulae/skhd
+
 elif [[ ${os} == "arch" ]] ; then
- echo "\n=> Installing Arch Linux Packages\n"
+ printf "\n=> Installing Arch Linux Packages\n"
  install_package hyprland
 
  install_package nvidia-dkms
