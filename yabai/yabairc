@@ -18,6 +18,7 @@ yabai -m config window_gap                      5
 
 # Disable Specific Apps
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^SketchyBar$" manage=off layer=above
 
 # Ghostty tabs render as separate windows in MacOS tiling window managers
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'

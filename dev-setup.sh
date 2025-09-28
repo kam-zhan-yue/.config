@@ -243,7 +243,7 @@ if [[ ${os} == "macos" ]] ; then
  install_tap felixkratz/formulae
  install_package sketchybar
  install_package borders
- cp $(brew --prefix)/share/sketchybar/examples/sketchybarrc ~/.config/sketchybar/sketchybarrc
+ chmod +x ~/.config/sketchybar/plugins/*
 
 elif [[ ${os} == "arch" ]] ; then
  printf "\n=> Installing Arch Linux Packages\n"
