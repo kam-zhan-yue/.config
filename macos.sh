@@ -35,3 +35,16 @@ killall Dock
 defaults write -g KeyRepeat -float 2.0
 defaults write NSGlobalDomain KeyRepeat -float 2.0
 
+
+############################################################
+# Wallpaper
+############################################################
+wallpaper_path="$HOME/.config/wallpapers/desktop-catppuccin-frappe-ascii-cat.png"
+
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "'"$wallpaper_path"'"'
+
+if [ $? == "0" ]; then
+    echo "Wallpaper set successfully to: $wallpaper_path"
+else
+    echo "Failed to set wallpaper."
+fi
