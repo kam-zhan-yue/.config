@@ -208,9 +208,21 @@ if [[ ${os} == "macos" ]] ; then
  install_package slack
  install_package postman
 
- # Yabai Configuration
+ # Fonts
+ install_package font-hack-nerd-font
+ install_package font-jetbrains-mono-nerd-font
+
+ # Yabai
  install_package koekeishiya/formulae/yabai
  install_package koekeishiya/formulae/skhd
+
+ # Sketchybar
+ if ! brew tap-info FelixKratz/formulae --installed &>/dev/null; then
+  brew tap FelixKratz/formulae
+ fi
+ install_package sketchybar
+ install_package borders
+ cp $(brew --prefix)/share/sketchybar/examples/sketchybarrc ~/.config/sketchybar/sketchybarrc
 
 elif [[ ${os} == "arch" ]] ; then
  printf "\n=> Installing Arch Linux Packages\n"
