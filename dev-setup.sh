@@ -154,10 +154,22 @@ function install_package() {
  fi
 }
 
+function install_tap() {
+ local package="${1}"
+ if ! brew tap | grep "${package}" &> /dev/null; then
+  brew tap "${package}"
+  echo "✅ ${package} tapped"
+ else
+  echo "✅ ${package} is already tapped"
+ fi
+}
+
+
 install_package astroterm
 install_package bacon
 install_package bat
 install_package cmake
+install_package direnv
 install_package docker
 install_package fzf
 install_package gh --yay=github-cli
@@ -213,13 +225,22 @@ if [[ ${os} == "macos" ]] ; then
  install_package font-jetbrains-mono-nerd-font
 
  # Yabai
- install_package koekeishiya/formulae/yabai
- install_package koekeishiya/formulae/skhd
+ install_package jq
+ if ! brew list -1 | grep -q yabai; then
+  brew install koekeishiya/formula/yabai
+  echo "✅ yabai installed"
+ else
+  echo "✅ yabai is already installed"
+ fi
+ if ! brew list -1 | grep -q skhd; then
+  brew install koekeishiya/formula/skhd
+  echo "✅ skhd installed"
+ else
+  echo "✅ skhd is already installed"
+ fi
 
  # Sketchybar
- if ! brew tap-info FelixKratz/formulae --installed &>/dev/null; then
-  brew tap FelixKratz/formulae
- fi
+ install_tap felixkratz/formulae
  install_package sketchybar
  install_package borders
  cp $(brew --prefix)/share/sketchybar/examples/sketchybarrc ~/.config/sketchybar/sketchybarrc
