@@ -240,10 +240,22 @@ if [[ ${os} == "macos" ]] ; then
  fi
 
  # Sketchybar
- install_tap felixkratz/formulae
- install_package sketchybar
+ if ! brew list -1 | grep -q sketchybar; then
+    install_package lua
+    install_package switchaudio-osx
+    install_package nowplaying-cli
+    install_tap felixkratz/formulae
+    install_package sketchybar
+    install_package sf-symbols
+    install_package font-sf-mono
+    install_package font-sf-pro
+    curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+    (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
+    echo "✅ sketchybar installed and setup"
+else
+    echo "✅ sketchybar already installed, skipping setup"
+fi
  install_package borders
- chmod +x ~/.config/sketchybar/plugins/*
 
 elif [[ ${os} == "arch" ]] ; then
  printf "\n=> Installing Arch Linux Packages\n"
@@ -275,7 +287,7 @@ elif [[ ${os} == "arch" ]] ; then
  install_package waybar
  install_package grim
  install_package slurp
- 
+
  # login management
  install_package ly
  sudo systemctl enable ly.service
