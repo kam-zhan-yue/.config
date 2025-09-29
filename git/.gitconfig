@@ -21,8 +21,6 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 
 [core]
     pager = delta

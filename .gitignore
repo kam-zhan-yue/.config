@@ -21,6 +21,7 @@
 !waybar/
 !wallpapers/
 !.gitignore
+!ghostty/
 
 !README.md
 !*.sh

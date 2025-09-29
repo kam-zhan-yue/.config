@@ -178,6 +178,7 @@ install_package git-delta
 install_package git-lfs
 install_package hyperfine
 install_package jj --pacman=jujutsu
+install_package meld
 install_package neovim
 install_package presenterm
 install_package ripgrep
@@ -219,6 +220,7 @@ if [[ ${os} == "macos" ]] ; then
  install_package licecap
  install_package slack
  install_package postman
+
 
  # Fonts
  install_package font-hack-nerd-font
