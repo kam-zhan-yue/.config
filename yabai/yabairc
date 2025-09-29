@@ -17,9 +17,16 @@ yabai -m config right_padding                   5
 yabai -m config window_gap                      5
 
 # Display-specific Settings
+num_displays=$(yabai -m query --displays | jq length)
+
 # Add extra top padding for spaces 1-2 (Display 1 - second monitor) to accommodate sketchybar
-yabai -m config --space 1 top_padding           35
-yabai -m config --space 2 top_padding           35
+if [ "$num_displays" -gt 1 ]; then
+  yabai -m config --space 1 top_padding 35
+  yabai -m config --space 2 top_padding 35
+else
+  yabai -m config --space 1 top_padding 5
+  yabai -m config --space 2 top_padding 5
+fi
 
 # Disable Specific Apps
 yabai -m rule --add app="^System Settings$" manage=off
@@ -28,7 +35,6 @@ yabai -m rule --add app="^SketchyBar$" manage=off layer=above
 # Ghostty tabs render as separate windows in MacOS tiling window managers
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
-
 
 # Kill extra spaces (anything beyond 6)
 for sid in $(yabai -m query --spaces | jq '.[].index' | awk '$1 > 6'); do
