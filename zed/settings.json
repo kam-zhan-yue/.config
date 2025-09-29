@@ -52,8 +52,8 @@
   "buffer_font_size": 14.0,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Frappé",
-    "dark": "Catppuccin Frappé"
+    "light": "One Light",
+    "dark": "One Dark"
   },
   "format_on_save": "on",
   "disable_ai": true
