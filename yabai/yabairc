@@ -36,6 +36,10 @@ yabai -m rule --add app="^SketchyBar$" manage=off layer=above
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
+# Same for Fork
+yabai -m signal --add app='^Fork$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Fork$' event=window_destroyed action='yabai -m space --layout bsp'
+
 # Kill extra spaces (anything beyond 6)
 for sid in $(yabai -m query --spaces | jq '.[].index' | awk '$1 > 6'); do
   yabai -m space --destroy $sid
@@ -66,6 +70,7 @@ yabai -m rule --add app="^Rider$" space=2
 
 yabai -m rule --add app="^Arc$" space=3
 yabai -m rule --add app="^Obsidian$" space=3
+yabai -m rule --add app="^Fork$" space=3
 
 yabai -m rule --add app="^Slack$" space=4
 yabai -m rule --add app="^Discord$" space=4
