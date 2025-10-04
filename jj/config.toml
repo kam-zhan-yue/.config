@@ -8,8 +8,8 @@ email = "kamzhanyue@gmail.com"
 editor = "nvim"
 pager = "delta"
 diff-formatter = ":git"
-diff-editor = "meld"
-merge-editor = "meld"
+diff-editor = ":builtin"
+default-command = "log"
 
 [revset-aliases]
 'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
