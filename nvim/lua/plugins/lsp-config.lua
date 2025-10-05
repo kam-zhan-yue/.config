@@ -47,6 +47,9 @@ return {
 
 				zls = function()
 					local lspconfig = require("lspconfig")
+					lspconfig.clangd.setup({
+						cmd = { "clangd", "--compile-commands-dir=build" },
+					})
 					lspconfig.zls.setup({
 						root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
 						settings = {
