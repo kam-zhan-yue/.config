@@ -22,10 +22,12 @@
 !wallpapers/
 !.gitignore
 !ghostty/
+!modules/
+!karabiner/
 
-!README.md
 !*.sh
 !*.toml
+!*.md
 
 # Reignore
 zed/.*

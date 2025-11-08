@@ -1,27 +1,38 @@
 #!/usr/bin/env bash
 
+if [ ! "$(uname)" == "Darwin" ]; then
+	echo 'This machine is not MacOS.' 1>&2
+	exit 1
+fi
+
+
 ############################################################
 # Dock
 ###########################################################
 
-# Hide the dock faster
-defaults write com.apple.dock autohide-time-modifier -float 0
-
+echo "==== DOCK ===="
+echo "Show and hide the docker faster!"
 defaults write com.apple.dock "autohide" -bool "true"
-
-# Show dock quicker
+defaults write com.apple.dock autohide-time-modifier -float 0
 defaults write com.apple.dock autohide-delay -float 0.05
 
-# Left algined dock
+echo "Left align the dock!"
 defaults write com.apple.dock "orientation" -string "left"
 
-# Smaller Icons
+echo "Make the dock icons tiny!"
 defaults write com.apple.dock tilesize -float 24
 
+echo "Hide all apps that are running but not pinned."
 defaults write com.apple.dock "static-only" -bool "true"
 
-# Don't show recently used apps
+echo "Don't show recently used apps"
 defaults write com.apple.dock "show-recents" -bool "false"
+
+echo "Disable Spotlight shortcut (use Raycast instead)"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/></dict>"
+
+echo "Disable Finder Spotlight shortcut (use Raycast instead)"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "<dict><key>enabled</key><false/></dict>"
 
 # Apply changes
 killall Dock
@@ -31,10 +42,15 @@ killall Dock
 # Keyboard
 ############################################################
 
-# Key repeat and InitialKeyRepeatSpeed
-defaults write -g KeyRepeat -float 2.0
-defaults write NSGlobalDomain KeyRepeat -float 2.0
+echo "==== KEYBOARD ===="
+echo "Keyboard go brrrrr"
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+echo "Automatically hide the menu bar (for sketchybar)"
+defaults write NSGlobalDomain _HIHideMenuBar -bool false
+killall SystemUIServer
 
+echo "Reload machine to apply effects"
 
 ############################################################
 # Wallpaper
