@@ -23,8 +23,6 @@ gh pr create --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph 
 [signing]
 behaviour = "own"
 backend = "gpg"
-key = "27962C46FEB99189"
-
 
 [fix.tools.ruff]
 command = ["uv", "run", "ruff", "format", "--stdin-filename", "$path", "-"]
