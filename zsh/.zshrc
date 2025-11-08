@@ -46,3 +46,5 @@ eval "$(zoxide init zsh)"
 
 
 . "$HOME/.grit/bin/env"
+
+export GPG_TTY=$(tty)

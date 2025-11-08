@@ -45,7 +45,7 @@ killall Dock
 echo "==== KEYBOARD ===="
 echo "Keyboard go brrrrr"
 defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
+defaults write -g KeyRepeat -int 2
 echo "Automatically hide the menu bar (for sketchybar)"
 defaults write NSGlobalDomain _HIHideMenuBar -bool false
 killall SystemUIServer
