@@ -48,6 +48,10 @@ defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 2
 echo "Automatically hide the menu bar (for sketchybar)"
 defaults write NSGlobalDomain _HIHideMenuBar -bool false
+
+echo "Turn on fn keys"
+defaults write -g com.apple.keyboard.fnState -bool true
+
 killall SystemUIServer
 
 echo "Reload machine to apply effects"
