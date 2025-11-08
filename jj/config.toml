@@ -20,6 +20,10 @@ pr = ["util", "exec", "--", "bash", "-c", """
 gh pr create --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)
 """]
 
+[signing]
+behaviour = "own"
+backend = "gpg"
+
 
 [fix.tools.ruff]
 command = ["uv", "run", "ruff", "format", "--stdin-filename", "$path", "-"]
