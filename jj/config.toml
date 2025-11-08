@@ -35,3 +35,6 @@ patterns = ["glob:'**/*.py'"]
 [fix.tools.biome-check]
 command = ["bun", "biome", "check", "--fix", "--diagnostic-level=error", "--stdin-file-path", "$path"]
 patterns = ["glob:'**/*.tsx'", "glob:'**/*.ts'", "biome.json"]
+
+[git]
+sign-on-push = true
