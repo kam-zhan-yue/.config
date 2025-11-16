@@ -3,7 +3,6 @@
 [user]
 	name = Alex Kam
 	email = kamzhanyue@gmail.com
-	signingkey = 27962C46FEB99189
 [alias]
   s = status
   a = add .
@@ -38,3 +37,6 @@
 
 [tag]
 	gpgSign = true
+
+[include]
+  path=~/.gitconfig.local

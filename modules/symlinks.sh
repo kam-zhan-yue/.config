@@ -22,4 +22,5 @@ setup_symlink "${HOME}/.zshrc" "${HOME}/.config/zsh/.zshrc"
 
 # gitconfig
 setup_symlink "${HOME}/.gitconfig" "${HOME}/.config/git/.gitconfig"
+setup_symlink "${HOME}/.gitconfig.local" "${HOME}/.config/git/.gitconfig.local"
 
