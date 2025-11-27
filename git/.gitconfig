@@ -1,8 +1,9 @@
 [item]
 	key = main
 [user]
-	name = Alex Kam
+	name = Kam Zhan Yue
 	email = kamzhanyue@gmail.com
+	signingkey = 55F6866BA29FE756
 [alias]
   s = status
   a = add .
