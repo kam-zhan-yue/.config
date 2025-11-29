@@ -44,6 +44,10 @@ eval "$(~/.local/bin/mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+# Language Input with fcitx5
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 . "$HOME/.grit/bin/env"
 
