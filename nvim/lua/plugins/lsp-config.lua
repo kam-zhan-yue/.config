@@ -38,6 +38,7 @@ return {
         "rust_analyzer",
         "emmet_ls",
         "glsl_analyzer",
+        "clangd",
       },
       handlers = {
         function(server_name) -- default handler (optional)
