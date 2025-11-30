@@ -10,4 +10,5 @@ vim.g.maplocalleader = "\\"
 -- vim.keymap.set("n", "tq", ":bd<CR>", { noremap = true, silent = true })
 
 -- vim.opt.relativenumber = true
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.opt.number = true

@@ -1,2 +1,2 @@
 # custom-shader = shaders/cursor_smear.glsl
-keybind = ctrl+w=close_surface
+# keybind = ctrl+w=close_surface
