@@ -1,0 +1,47 @@
+[item]
+	key = main
+[user]
+	name = Alex Kam
+	email = alexander.kam@uptickhq.com
+  signingkey = 27962C46FEB99189
+[alias]
+  s = status
+  a = add .
+  pf = push --force-with-lease
+  cm = commit -m
+  l = log --pretty=oneline
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+  qs = "!git switch $(git branch --all | grep -v /HEAD | grep -v \\* | sed 's/remotes\\/origin\\///' | fzf)"
+  ri = rebase -i
+  rc = rebase --continue
+[rebase]
+  autosquash = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
+
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential

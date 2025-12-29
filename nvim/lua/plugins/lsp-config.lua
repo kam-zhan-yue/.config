@@ -32,6 +32,7 @@ return {
       ensure_installed = {
         "lua_ls",
         "ruff",
+        "mypy",
         "pyright",
         "biome",
         "ts_ls",
@@ -44,6 +45,25 @@ return {
         function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup({
             capabilities = capabilities,
+          })
+        end,
+
+        ["ts_ls"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.ts_ls.setup({
+            settings = {
+              typescript = {
+                inlayHints = {
+                  includeInlayEnumMemberValueHints = true,
+                  includeInlayFunctionLikeReturnTypeHints = true,
+                  includeInlayFunctionParameterTypeHints = true,
+                  includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                  includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                  includeInlayPropertyDeclarationTypeHints = true,
+                  includeInlayVariableTypeHints = false,
+                },
+              },
+            },
           })
         end,
 
@@ -108,9 +128,9 @@ return {
         vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
         vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
         vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-        vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+        vim.keymap.set("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
         vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-        vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+        vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
       end,
     })
 
