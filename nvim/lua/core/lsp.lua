@@ -6,6 +6,7 @@ vim.lsp.enable({
   'ts-ls',
   'bash-ls',
   'gopls',
+  'rust-analyzer',
 })
 
 vim.diagnostic.config({

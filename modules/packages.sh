@@ -102,6 +102,7 @@ install_package ruff
 install_package basedpyright
 install_package gopls
 install_package bash-language-server
+install_package rust-analyzer
 
 # desired shell
 # which_zsh="$(which zsh)"
@@ -116,25 +117,19 @@ which_zsh="/usr/bin/zsh" # for some reason, archlinux has a symlink to /usr/sbin
 # fi
 
 printf "\n=> Setting up personal applications\n"
-install_package anki --yay=anki
 install_package audacity
 install_package inky --yay=inky
 install_package obsidian
 install_package obs --pacman=obs-studio
-install_package jetbrains-toolbox --yay=jetbrains-toolbox
-install_package rider --yay=rider
 install_package godot
 
 if [[ ${os} == "macos" ]] ; then
   # MacOS specific packages
   printf "\n=> Installing MacOS Packages\n"
-  install_package rectangle
   install_package raycast
   install_package imageoptim
   install_package spotify
-  install_package licecap
   install_package slack
-  install_package postman
 
   # Fonts
   install_package font-hack-nerd-font
