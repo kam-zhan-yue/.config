@@ -9,6 +9,8 @@ vim.lsp.enable({
   'rust-analyzer',
 })
 
+vim.lsp.config("roslyn", {})
+
 vim.diagnostic.config({
   virtual_text = true,
 })

@@ -75,6 +75,7 @@ function install_tap() {
 install_package astroterm
 install_package bacon
 install_package bat
+install_package cmake
 install_package direnv
 install_package docker
 install_package fzf
@@ -93,16 +94,8 @@ install_package zed
 install_package zoxide
 install_package zsh
 
-# Language Server Protocols
-install_package cmake
-install_package llvm # includes clangd
-install_package typescript-language-server
-install_package lua-language-server
-install_package ruff
-install_package basedpyright
-install_package gopls
-install_package bash-language-server
-install_package rust-analyzer
+# TODO Add dotnet-sdk
+
 
 # desired shell
 # which_zsh="$(which zsh)"
