@@ -1,6 +1,11 @@
 vim.lsp.enable({
   'clangd',
-  'lua-ls'
+  'lua-ls',
+  'ruff',
+  'basedpyright',
+  'ts-ls',
+  'bash-ls',
+  'gopls',
 })
 
 vim.diagnostic.config({
@@ -18,6 +23,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gl", vim.diagnostic.open_float, "Open Diagnostic Float")
     map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+    map("gd", vim.lsp.buf.definition, "Goto Definition")
     map("<leader>ff", vim.lsp.buf.format, "Format")
 
     local function client_supports_method(client, method, bufnr)
@@ -38,3 +44,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- Log Commands
+vim.api.nvim_create_user_command("LspLog", function()
+  vim.cmd.vsplit(vim.lsp.log.get_filename())
+end, {
+  desc = "Get all the lsp logs",
+})
+
+vim.api.nvim_create_user_command("LspInfo", function()
+  vim.cmd("silent checkhealth vim.lsp")
+end, {
+  desc = "Get all the information about all LSP attached",
+})
+-- }}}

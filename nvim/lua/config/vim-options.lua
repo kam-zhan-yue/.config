@@ -6,3 +6,4 @@ vim.cmd("set mouse=")
 vim.g.mapleader = " "
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.opt.number = true
+vim.o.signcolumn = 'yes'

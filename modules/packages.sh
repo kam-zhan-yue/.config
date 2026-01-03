@@ -95,9 +95,13 @@ install_package zsh
 
 # Language Server Protocols
 install_package cmake
-install_package clangd
+install_package llvm # includes clangd
 install_package typescript-language-server
 install_package lua-language-server
+install_package ruff
+install_package basedpyright
+install_package gopls
+install_package bash-language-server
 
 # desired shell
 # which_zsh="$(which zsh)"
