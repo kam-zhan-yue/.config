@@ -1,5 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
+  opts = {
+    inlay_hints = { enabled = true },
+  },
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -32,13 +35,9 @@ return {
       ensure_installed = {
         "lua_ls",
         "ruff",
-        "mypy",
         "pyright",
         "biome",
         "ts_ls",
-        "rust_analyzer",
-        "emmet_ls",
-        "glsl_analyzer",
         "clangd",
       },
       handlers = {
