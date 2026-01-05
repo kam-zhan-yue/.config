@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
     map("gd", vim.lsp.buf.definition, "Goto Definition")
-    map("<leader>ff", vim.lsp.buf.format, "Format")
+    map("grf", vim.lsp.buf.format, "Format")
 
     local function client_supports_method(client, method, bufnr)
       if vim.fn.has 'nvim-0.11' == 1 then

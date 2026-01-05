@@ -7,3 +7,5 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.opt.number = true
 vim.o.signcolumn = 'yes'
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.grepformat = "%f:%l:%c:%m"
