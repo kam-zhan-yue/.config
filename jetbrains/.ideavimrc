@@ -1,0 +1,35 @@
+set scrolloff=5
+set surround
+
+" Do incremental searching.
+set incsearch
+set commentary
+
+map Q gq
+
+let mapleader = ' '
+
+" config stuff
+noremap <leader>cc :edit ~/.ideavimrc<cr>
+noremap <leader>cs :source ~/.ideavimrc<cr>
+
+" nvim-like lsp commands
+" https://neovim.io/doc/user/lsp.html
+map <leader>gra <Action>(ShowIntentionActions)
+map <leader>grn <Action>(RenameElement)
+
+
+" refactoring
+"map <leader>rf <Action>(ReformatCode)
+"map <leader>oi <Action>(OptimizeImports)
+"map <leader>ra <Action>(RearrangeCode)
+
+" file actions
+"map <leader>fs <Action>(NewScratchFile)
+"map <leader>qq <Action>(CloseContent)
+"map <leader>qa <Action>(CloseAllEditors)
+"map <leader>nf <Action>(NewFile)
+"map <leader>nd <Action>(NewDir)
+"map <leader>re <Action>(RenameFile)
+"map <leader>of <Action>(OpenFile)
+"map <leader>ri <Action>(RestartIde)
