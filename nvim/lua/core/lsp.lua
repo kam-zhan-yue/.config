@@ -6,7 +6,8 @@ vim.lsp.enable({
   'ts-ls',
   'bash-ls',
   'gopls',
-  'rust-analyzer',
+  'gdscript',
+  -- 'rust-analyzer',
 })
 
 vim.lsp.config("roslyn", {})
