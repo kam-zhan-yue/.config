@@ -30,6 +30,7 @@ fi
 
 # Disable Specific Apps
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Godot$" manage=off
 yabai -m rule --add app="^SketchyBar$" manage=off layer=above
 
 # Ghostty tabs render as separate windows in MacOS tiling window managers
@@ -62,7 +63,7 @@ yabai -m space 6 --label="other" --display 2
 
 # move some apps automatically to specific spaces
 yabai -m rule --add app="^Ghostty$" space=1
-yabai -m rule --add app="^Godot$" space=2
+# yabai -m rule --add app="^Godot$" space=2
 yabai -m rule --add app="^Unity$" space=2
 
 yabai -m rule --add app="^Zed$" space=2

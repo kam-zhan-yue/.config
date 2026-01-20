@@ -5,6 +5,6 @@ end
 
 local projectfile = vim.fn.getcwd() .. '/project.godot'
 if file_exists(projectfile) then
-  pcall(vim.fn.serverstart './godothost')
+  pcall(vim.fn.serverstart './godot-lsp')
 end
 
