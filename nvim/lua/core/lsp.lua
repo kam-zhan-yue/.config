@@ -1,13 +1,14 @@
 vim.lsp.enable({
   'clangd',
   'lua-ls',
-  'ruff',
   'ts-ls',
   'bash-ls',
+  'gdscript',
   'gopls',
   'gdscript',
-  -- 'basedpyright',
   -- 'rust-analyzer',
+  -- 'basedpyright',
+  -- 'ruff',
 })
 
 vim.lsp.config("roslyn", {})
