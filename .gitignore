@@ -41,3 +41,4 @@ zsh/.zcompdump*
 zsh/.p10k.zsh
 nvim/undodir*
 git/.gitconfig.local
+jj/repos/*

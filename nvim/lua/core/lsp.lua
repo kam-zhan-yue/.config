@@ -2,11 +2,11 @@ vim.lsp.enable({
   'clangd',
   'lua-ls',
   'ruff',
-  'basedpyright',
   'ts-ls',
   'bash-ls',
   'gopls',
   'gdscript',
+  -- 'basedpyright',
   -- 'rust-analyzer',
 })
 

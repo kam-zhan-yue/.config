@@ -24,6 +24,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 alias pnpm="/Users/kamzhanyue/.local/share/mise/installs/node/18.20.4/bin/pnpm"
+alias python="python3"
 
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
@@ -52,3 +53,7 @@ export XMODIFIERS=@im=fcitx
 . "$HOME/.grit/bin/env"
 
 export GPG_TTY=$(tty)
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
