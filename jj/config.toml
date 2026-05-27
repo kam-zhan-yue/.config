@@ -2,7 +2,7 @@
 
 [user]
 name = "Alex Kam"
-email = "kamzhanyue@gmail.com"
+email = "45383092+kam-zhan-yue@users.noreply.github.com"
 
 [ui]
 editor = "nvim"
@@ -25,14 +25,17 @@ behaviour = "own"
 backend = "gpg"
 
 [fix.tools.ruff]
+enabled = false
 command = ["uv", "run", "ruff", "format", "--stdin-filename", "$path", "-"]
 patterns = ["glob:'**/*.py'"]
 
 [fix.tools.ruff-check]
+enabled = false
 command = ["uv", "run", "ruff", "check", "--fix", "--stdin-filename", "$path", "-"]
 patterns = ["glob:'**/*.py'"]
 
 [fix.tools.biome-check]
+enabled = false
 command = ["bun", "biome", "check", "--fix", "--diagnostic-level=error", "--stdin-file-path", "$path"]
 patterns = ["glob:'**/*.tsx'", "glob:'**/*.ts'", "biome.json"]
 

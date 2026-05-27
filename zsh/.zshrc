@@ -50,10 +50,9 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-. "$HOME/.grit/bin/env"
+# . "$HOME/.grit/bin/env"
 
 export GPG_TTY=$(tty)
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# editor
+export PATH="/opt/homebrew/bin:$PATH"
