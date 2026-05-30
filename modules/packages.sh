@@ -163,6 +163,9 @@ fi
 
 elif [[ ${os} == "arch" ]] ; then
   printf "\n=> Installing Arch Linux Packages\n"
+  # Necessary browser
+  install_package firefox
+
   install_package hyprland
 
   install_package nvidia-dkms
@@ -195,7 +198,7 @@ elif [[ ${os} == "arch" ]] ; then
 
   # login management
   install_package ly
-  sudo systemctl enable ly.service
+  sudo systemctl enable ly@tty2.service
 
   # recording gifs
   install_package peek
