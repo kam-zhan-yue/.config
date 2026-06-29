@@ -48,3 +48,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !gh auth git-credential
+[credential]
+	helper = cache

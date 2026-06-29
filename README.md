@@ -17,7 +17,7 @@ This will do the following:
 
 1. Setup common task and package managers (homebrew, mise, uv)
 2. Optionally setup symlinks for common config files (.gitconfig, .zshrc, etc)
-3. Setup packages
+3. Setup packages (MacOS or Arch Linux)
 
 ### Packages / Tools
 
@@ -25,17 +25,17 @@ Below are all the packages I use in my dev environment, along with my personal r
 
 | Package                                                | Rating | Comments                                                                  |
 | ------------------------------------------------------ | ------ | ------------------------------------------------------------------------- |
+| [neovim](https://github.com/neovim/neovim)             | ★★★★★  | Vim or nothing, baby.                                                     |
 | [jj](https://github.com/jj-vcs/jj)                     | ★★★★★  | Completely replaced git for me. The best way to version control IMO.      |
 | [ghostty](https://github.com/ghostty-org/ghostty)      | ★★★★★  | Blazingly fast and smooth terminal that works right out the box.          |
-| [zed](https://github.com/zed-industries/zed)           | ★★★★★  | My favourite editor. Limited support for Python development.              |
 | [rectangle](https://github.com/rxhanson/Rectangle)     | ★★★★★  | The easiest and simplest tiling manager I've had the pleasure of using.   |
-| [neovim](https://github.com/neovim/neovim)             | ★★★★★  | I do prefer Zed generally, but I use nvim to fill in the gaps.            |
 | [zoxide](https://github.com/ajeetdsouza/zoxide)        | ★★★★★  | Sceptical at first, but I don't use cd anymore because of this.           |
 | [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)          | ★★★★★  | Handles everything I could ever want for zsh.                             |
-| [fzf](https://github.com/junegunn/fzf)                 | ★★★★   | Super versatile tool that makes anything interactive.                     |
+| [yabai](https://github.com/asmvik/yabai)               | ★★★★   | A MacOS window tiling manager.                                            |
 | [starship](https://github.com/starship/starship)       | ★★★★   | Technically this is only visual, but I can't use zsh without it.          |
 | [hyperfine](https://github.com/sharkdp/hyperfine)      | ★★★★   | Amazing benchmarking tool. Shouldn't be using anything else.              |
 | [bacon](https://github.com/Canop/bacon)                | ★★★    | Whatever your Rust LSP is telling you, the compiler errors say it better. |
+| [fzf](https://github.com/junegunn/fzf)                 | ★★★    | Super versatile tool that makes anything interactive.                     |
 | [gh](https://cli.github.com/)                          | ★★★    | Convenient replacement for github.com, and powerful integrations.         |
 | [imageoptim](https://github.com/ImageOptim/ImageOptim) | ★★     | Super niche one-purpose use, but it is good at it.                        |
 | [ripgrep](https://github.com/BurntSushi/ripgrep)       | ★★     | Niche usage for me, but definitely better than using grep.                |
@@ -57,6 +57,7 @@ Below are all the applications I use, either proprietary or open-source.
 | [godot](https://github.com/godotengine/godot)               | 🟢          | Absolutely amazing game engine.                            |
 | [obs-studio](https://github.com/obsproject/obs-studio)      | 🟢          | Super good recording / streaming software.                 |
 | [licecap](https://github.com/justinfrankel/licecap)         | 🟢          | Handy gif capturing application.                           |
+| [zed](https://github.com/zed-industries/zed)                | 🟢          | A pretty fast editor.                                      |
 | [obsidian](https://obsidian.md/)                            | ❌          | Handles all my notetaking and thoughts.                    |
 | [spotify](https://spotify.com/)                             | ❌          | My go-to music player.                                     |
 | [slack](https://slack.com/)                                 | ❌          | Better than Teams, I guess.                                |

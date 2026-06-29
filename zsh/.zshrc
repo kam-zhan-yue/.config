@@ -20,9 +20,6 @@ plugins=(
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 alias pnpm="/Users/kamzhanyue/.local/share/mise/installs/node/18.20.4/bin/pnpm"
 alias python="python3"
 
@@ -54,5 +51,8 @@ export XMODIFIERS=@im=fcitx
 
 export GPG_TTY=$(tty)
 
-# editor
-export PATH="/opt/homebrew/bin:$PATH"
+# Brew
+if [[ "$(uname)" == "Darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
