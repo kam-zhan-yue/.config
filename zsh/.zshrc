@@ -59,6 +59,9 @@ fi
 # editor
 export PATH="/opt/homebrew/bin:$PATH"
 
+# dotnet
+export DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 

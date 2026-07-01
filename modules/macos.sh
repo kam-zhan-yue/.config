@@ -34,6 +34,9 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dic
 echo "Disable Finder Spotlight shortcut (use Raycast instead)"
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "<dict><key>enabled</key><false/></dict>"
 
+echo "Disable press and hold for character accents!"
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Apply changes
 killall Dock
 
