@@ -24,9 +24,11 @@ return {
     config = function()
       local telescope = require("telescope")
       telescope.setup({
+        defaults = {
+          file_ignore_patterns = { 'node_modules', '.git', '.venv', '%.meta$' },
+        },
         pickers = {
           find_files = {
-            file_ignore_patterns = { 'node_modules', '.git', '.venv' },
             hidden = true
           }
         },

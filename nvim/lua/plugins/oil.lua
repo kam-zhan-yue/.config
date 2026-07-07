@@ -7,6 +7,11 @@ return {
   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
   opts = {
+    view_options = {
+      is_always_hidden = function(name, _)
+        return name:match("%.meta$") ~= nil
+      end,
+    },
     keymaps = {
       ["g?"] = { "actions.show_help", mode = "n" },
       ["<CR>"] = "actions.select",
