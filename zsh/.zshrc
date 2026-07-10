@@ -23,6 +23,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 alias pnpm="/Users/kamzhanyue/.local/share/mise/installs/node/18.20.4/bin/pnpm"
 alias python="python3"
 
+# just completions
+fpath=(~/.config/zsh/completions $fpath)
+
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -33,37 +36,12 @@ source $ZSH/oh-my-zsh.sh
 # bun completions
 [ -s "/Users/kamzhanyue/.bun/_bun" ] && source "/Users/kamzhanyue/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # Config Stuff
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-# Language Input with fcitx5
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
 # . "$HOME/.grit/bin/env"
-
-export GPG_TTY=$(tty)
-
-if [[ "$(uname)" == "Darwin" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  export PATH="/opt/homebrew/bin:$PATH"
-fi
-
-# editor
-export PATH="/opt/homebrew/bin:$PATH"
-
-# dotnet
-export DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

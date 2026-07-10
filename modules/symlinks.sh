@@ -19,6 +19,7 @@ function setup_symlink() {
 
 # zsh
 setup_symlink "${HOME}/.zshrc" "${HOME}/.config/zsh/.zshrc"
+setup_symlink "${HOME}/.zprofile" "${HOME}/.config/zsh/.zprofile"
 
 # gitconfig
 setup_symlink "${HOME}/.gitconfig" "${HOME}/.config/git/.gitconfig"
