@@ -12,7 +12,7 @@
   l = log --pretty=oneline
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
-  qs = "!git switch $(git branch --all | grep -v /HEAD | grep -v \\* | sed 's/remotes\\/origin\\///' | fzf)"
+  qs = "!git switch $(git branch | grep -v /HEAD | grep -v \\* | sed 's/remotes\\/origin\\///' | fzf)"
   ri = rebase -i
   rc = rebase --continue
   sm = switch develop/main
