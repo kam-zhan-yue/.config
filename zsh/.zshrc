@@ -45,3 +45,6 @@ eval "$(zoxide init zsh)"
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Unity CLI
+. "/Users/zhanyue.kam/.unity/env"
