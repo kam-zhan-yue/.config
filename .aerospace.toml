@@ -81,7 +81,7 @@ gaps.inner.horizontal = 0
 gaps.inner.vertical =   0
 gaps.outer.left =       0
 gaps.outer.bottom =     0
-gaps.outer.top =        0
+gaps.outer.top =        35
 gaps.outer.right =      0
 
 # 'main' binding mode declaration
@@ -134,28 +134,28 @@ gaps.outer.right =      0
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
-    alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
+    f1 = 'workspace 1'
+    f2 = 'workspace 2'
+    f3 = 'workspace 3'
+    f4 = 'workspace 4'
+    f5 = 'workspace 5'
+    f6 = 'workspace 6'
+    f7 = 'workspace 7'
+    f8 = 'workspace 8'
+    f9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     # Moving a window does not change the focused workspace, so these also poke
     # sketchybar directly to keep its app icons up to date.
-    alt-shift-1 = ['move-node-to-workspace 1', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-2 = ['move-node-to-workspace 2', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-3 = ['move-node-to-workspace 3', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-4 = ['move-node-to-workspace 4', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-5 = ['move-node-to-workspace 5', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-6 = ['move-node-to-workspace 6', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-7 = ['move-node-to-workspace 7', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-8 = ['move-node-to-workspace 8', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
-    alt-shift-9 = ['move-node-to-workspace 9', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f1 = ['move-node-to-workspace 1; workspace 1', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f2 = ['move-node-to-workspace 2; workspace 2', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f3 = ['move-node-to-workspace 3; workspace 3', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f4 = ['move-node-to-workspace 4; workspace 4', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f5 = ['move-node-to-workspace 5; workspace 5', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f6 = ['move-node-to-workspace 6; workspace 6', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f7 = ['move-node-to-workspace 7; workspace 7', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f8 = ['move-node-to-workspace 8; workspace 8', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+    shift-f9 = ['move-node-to-workspace 9; workspace 9', 'exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -191,3 +191,8 @@ gaps.outer.right =      0
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
 
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+]
