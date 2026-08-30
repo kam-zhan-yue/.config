@@ -31,4 +31,4 @@ setup_symlink "${HOME}/.aerospace.toml" "${HOME}/.config/.aerospace.toml"
 
 # TODO: Figure out how to symlink different gitconfigs depending on the machine you are on
 # In the meantime, uncomment this and run the command
-setup_symlink "${HOME}/.gitconfig" "${HOME}/.config/git/.gitconfig.dena"
+setup_symlink "${HOME}/.gitconfig" "${HOME}/.config/git/.gitconfig"

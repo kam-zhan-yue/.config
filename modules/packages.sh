@@ -85,6 +85,7 @@ install_package git-delta
 install_package git-lfs
 install_package hyperfine
 install_package jj --pacman=jujutsu
+install_package jq
 install_package neovim
 install_package presenterm
 install_package ripgrep
@@ -94,27 +95,14 @@ install_package zed
 install_package zoxide
 install_package zsh
 
-# TODO Add dotnet-sdk
-
-
-# desired shell
-# which_zsh="$(which zsh)"
 which_zsh="/usr/bin/zsh" # for some reason, archlinux has a symlink to /usr/sbin/zsh
-
-# check current login shell
-# if [[ $SHELL == "$which_zsh" ]]; then
-#   echo "✅ zsh is already the default shell"
-# else
-#   echo "➡ Changing default shell to $which_zsh"
-#   chsh -s "$which_zsh"
-# fi
 
 printf "\n=> Setting up personal applications\n"
 install_package audacity
-install_package inky --yay=inky
-install_package obsidian
 install_package obs --pacman=obs-studio
-install_package godot
+install_package obsidian
+# install_package inky --yay=inky
+# install_package godot
 
 if [[ ${os} == "macos" ]] ; then
   # MacOS specific packages
@@ -128,38 +116,22 @@ if [[ ${os} == "macos" ]] ; then
   install_package font-hack-nerd-font
   install_package font-jetbrains-mono-nerd-font
 
-  # Yabai
-  install_package jq
-  if ! brew list -1 | grep -q yabai; then
-    brew install koekeishiya/formulae/yabai
-      echo "✅ yabai installed"
-    else
-      echo "✅ yabai is already installed"
-  fi
-  if ! brew list -1 | grep -q skhd; then
-    brew install koekeishiya/formulae/skhd
-    echo "✅ skhd installed"
+   # Sketchybar
+   if ! brew list -1 | grep -q sketchybar; then install_package lua
+      install_package switchaudio-osx
+      install_package nowplaying-cli
+      install_tap felixkratz/formulae
+      install_package sketchybar
+      install_package sf-symbols
+      install_package font-sf-mono
+      install_package font-sf-pro
+      curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+      (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
+      echo "✅ sketchybar installed and setup"
   else
-    echo "✅ skhd is already installed"
+      echo "✅ sketchybar already installed, skipping setup"
   fi
-
- # Sketchybar
- if ! brew list -1 | grep -q sketchybar; then
-    install_package lua
-    install_package switchaudio-osx
-    install_package nowplaying-cli
-    install_tap felixkratz/formulae
-    install_package sketchybar
-    install_package sf-symbols
-    install_package font-sf-mono
-    install_package font-sf-pro
-    curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
-    (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
-    echo "✅ sketchybar installed and setup"
-else
-    echo "✅ sketchybar already installed, skipping setup"
-fi
-  install_package borders
+  # install_package borders
 
 elif [[ ${os} == "arch" ]] ; then
   printf "\n=> Installing Arch Linux Packages\n"
