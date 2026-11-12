@@ -34,7 +34,7 @@ source $ZSH/oh-my-zsh.sh
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
-[ -s "/Users/kamzhanyue/.bun/_bun" ] && source "/Users/kamzhanyue/.bun/_bun"
+# [ -s "/Users/kamzhanyue/.bun/_bun" ] && source "/Users/kamzhanyue/.bun/_bun"
 
 # Config Stuff
 eval "$(~/.local/bin/mise activate zsh)"
@@ -44,7 +44,7 @@ eval "$(zoxide init zsh)"
 # . "$HOME/.grit/bin/env"
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Unity CLI
 . "/Users/zhanyue.kam/.unity/env"

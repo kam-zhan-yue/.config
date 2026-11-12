@@ -7,6 +7,7 @@ return {
       local builtin = require("telescope.builtin")
 
       local exclude_local_packages = true
+      local include_ignored = false
 
       -- directories to prune entirely (fd/rg won't descend into these at all)
       local base_exclude_dirs = { '.git', 'node_modules', '.venv', 'Library' }
@@ -31,6 +32,9 @@ return {
           table.insert(cmd, '--exclude')
           table.insert(cmd, glob)
         end
+        if include_ignored then
+          table.insert(cmd, '--no-ignore-vcs')
+        end
         return cmd
       end
 
@@ -41,6 +45,9 @@ return {
         end
         for _, glob in ipairs(base_exclude_globs) do
           table.insert(args, '--glob=!' .. glob)
+        end
+        if include_ignored then
+          table.insert(args, '--no-ignore-vcs')
         end
         return args
       end
@@ -60,6 +67,10 @@ return {
         exclude_local_packages = not exclude_local_packages
         vim.notify('Telescope LocalPackages/ ' .. (exclude_local_packages and 'excluded' or 'included'))
       end, { desc = 'Toggle LocalPackages/ in Telescope ff/fg' })
+      vim.keymap.set('n', '<leader>fG', function()
+        include_ignored = not include_ignored
+        vim.notify('Telescope git-ignored files ' .. (include_ignored and 'included' or 'excluded'))
+      end, { desc = 'Toggle git-ignored files in Telescope ff/fg' })
     end
     },
   {
@@ -68,6 +79,7 @@ return {
       local telescope = require("telescope")
       telescope.setup({
         defaults = {
+          path_display = { "filename_first", "truncate" },
           preview = {
             treesitter = false,
           },

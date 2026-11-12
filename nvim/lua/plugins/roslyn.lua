@@ -4,6 +4,10 @@ return {
         require("roslyn").setup()
 
         vim.lsp.config("roslyn", {
+            -- Disable LSP file watching: huge Unity tree exhausts fds (EMFILE)
+            capabilities = {
+                workspace = { didChangeWatchedFiles = { dynamicRegistration = false } },
+            },
             settings = {
                 ["csharp|background_analysis"] = {
                     dotnet_analyzer_diagnostics_scope = "none",

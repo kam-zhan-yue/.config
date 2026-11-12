@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
     map("gd", vim.lsp.buf.definition, "Goto Definition")
     map("grf", vim.lsp.buf.format, "Format")
+    map("grc", "<cmd>LspInheritors<cr>", "List Inheritors")
 
     local function client_supports_method(client, method, bufnr)
       if vim.fn.has 'nvim-0.11' == 1 then
@@ -61,5 +62,11 @@ vim.api.nvim_create_user_command("LspInfo", function()
   vim.cmd("silent checkhealth vim.lsp")
 end, {
   desc = "Get all the information about all LSP attached",
+})
+
+vim.api.nvim_create_user_command("LspInheritors", function()
+  vim.lsp.buf.typehierarchy("subtypes")
+end, {
+  desc = "List the subtypes (inheritors) of the class under the cursor",
 })
 -- }}}

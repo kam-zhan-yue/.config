@@ -21,3 +21,4 @@ export PATH="$PATH:$DOTNET_ROOT_ARM64:$DOTNET_ROOT_ARM64/tools"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/zhanyue.kam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/zhanyue.kam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+export PIP_UPLOADED_PRIOR_TO=P7D

@@ -2,8 +2,8 @@
 	key = main
 [user]
 	name = Alex Kam
-	email = 45383092+kam-zhan-yue@users.noreply.github.com
-  signingkey = ABD879D5E5B8CC7A
+	email = zhanyue.kam@dena.com
+  signingkey = 0EE1547FB2732CB0
 [alias]
   s = status
   a = add .
@@ -27,6 +27,7 @@
 
 [core]
   pager = delta
+	autocrlf = input
 
 [interactive]
   diffFilter = delta --color-only
@@ -43,7 +44,10 @@
 
 [credential "https://github.com"]
 	helper = 
-	helper = !gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+	insteadOf = ssh://git@github.com/

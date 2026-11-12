@@ -1,5 +1,6 @@
 require("config.vim-config")
 require("config.godot-config")
+require("config.editorconfig")
 require("core.lazy")
 require("core.lsp")
 
